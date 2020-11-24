@@ -179,7 +179,7 @@ def draw_graph(yyyymm):
                       background_fill_alpha=.7)
     plot.renderers.append(labels)
     print('... ###', yyyy, '년', mm, '월 뉴스 시각화를 진행하는 중 ... ###')
-    output_file("interactive_graphs_" + yyyy + "_" + mm + ".html")
+    output_file("./graphs/interactive_graphs_" + yyyy + "_" + mm + ".html")
     show(plot)
 
     # print(G.nodes(data=True))

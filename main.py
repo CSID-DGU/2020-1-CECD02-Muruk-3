@@ -14,8 +14,7 @@ import create_Apriori as cAP
 import visualization as visual
 
 # GUI
-print("안녕하세요, 무럭팀 뉴스 키워드 시각화 프로그램입니다.\n")
-#print("검색 기간은 2009년 7월부터 2019년 4월 이내로 제공합니다.\n")
+print("안녕하세요, 무럭팀 뉴스 키워드 시각화 프로그램입니다.")
 period = input("검색하고자 하는 달을 입력하세요(ex. 202010) >> ")
 
 gisa_keyword_df1, gisa_keyword_df2, gisa_keyword_df3, gisa_keyword_df4, gisa_keyword_df5, yyyy, mm = fc.find_csv_sepearte_week(period)
