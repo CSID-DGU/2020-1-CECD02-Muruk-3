@@ -5,6 +5,7 @@ import os
 import pandas as pd
 import numpy as np
 
+
 def create_TFIDF(yyyymm):
     yyyy = str(yyyymm)[:4]
     mm = str(yyyymm)[4:]
@@ -12,13 +13,13 @@ def create_TFIDF(yyyymm):
         mm = mm[1]
 
         # 우선 만들어진 파일이 있는지 확인하는 코드
-    #dir = '/content/drive/My Drive/뉴스분석_소스코드/02. 전처리/유주은/수정중_표준편차/' + str(yyyy) + '_' + str(mm)  # + '_'
+    # dir = '/content/drive/My Drive/뉴스분석_소스코드/02. 전처리/유주은/수정중_표준편차/' + str(yyyy) + '_' + str(mm)  # + '_'
     dir = './data_storage/TFIDF_SD/' + str(yyyy) + '_' + str(mm)  # + '_'
 
     if os.path.exists(dir):  # 해당 폴더가 존재하면
         csv_list = os.listdir(dir)
         if len(csv_list) >= 4:  # 안의 파일의 크기가 4개보다 더 크면
-            print("... ### TF-IDF 파일 읽어오는 중 ... ###")
+            print("... ### TF-IDF 파일 읽어오는 중 ### ...")
             tmp_pd = pd.DataFrame()
             # for i in csv_list :
             # tmp_pd = pd.read_csv(dir + '/' + i, index_col = 0)
@@ -27,7 +28,7 @@ def create_TFIDF(yyyymm):
         else:
             None
 
-            #dir = '/content/drive/My Drive/뉴스분석_소스코드/02. 전처리/김민선/DTM/'
+            # dir = '/content/drive/My Drive/뉴스분석_소스코드/02. 전처리/김민선/DTM/'
     dir = './data_storage/DTM/'
 
     # yyyy = str(yyyymm)[:4]
@@ -96,18 +97,19 @@ def create_TFIDF(yyyymm):
                     # print(rank_df.columns[j])
                     # print("--", j)
                     # print("--",stop_key)
-                    #print(stop_key)
+                    # print(stop_key)
                     # print(rank_df[rank_df.columns[j]])
                     sample_df = sample_df.drop([rank_df.columns[j], ], axis=1)
                     # print(sample_df)
         print(sample_df)
 
-        #directory2 = '/content/drive/My Drive/뉴스분석_소스코드/02. 전처리/유주은/수정중_표준편차/' + str(yyyy) + '_' + str(mm)  # + '_'
+        # directory2 = '/content/drive/My Drive/뉴스분석_소스코드/02. 전처리/유주은/수정중_표준편차/' + str(yyyy) + '_' + str(mm)  # + '_'
         directory2 = './data_storage/TFIDF_SD/' + str(yyyy) + '_' + str(mm)
         try:
             if not os.path.exists(directory2):
                 os.makedirs(directory2)
         except OSError:
             print('Error: Creating directory. ' + directory2)
-        sample_df.to_csv(directory2 + '/' + yyyy + '_' + mm + '_' + 'week' + str(week_num) + '_TF-IDF.csv', encoding='utf-8')  # 중간에 '_'
+        sample_df.to_csv(directory2 + '/' + yyyy + '_' + mm + '_' + 'week' + str(week_num) + '_TF-IDF.csv',
+                         encoding='utf-8')  # 중간에 '_'
         week_num = week_num + 1

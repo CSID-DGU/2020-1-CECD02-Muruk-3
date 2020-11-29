@@ -18,7 +18,7 @@ def create_Apriori(yyyymm):
 
     if os.path.exists(dir):
         csv_list = os.listdir(dir)
-        print("... ### Apriori 파일 읽어오는 중 ... ###")
+        print("... ### Apriori 파일 읽어오는 중 ### ...")
         tmp_pd = pd.read_csv(dir + '/' + csv_list[0], index_col=0)
         #print(tmp_pd)201
         return None

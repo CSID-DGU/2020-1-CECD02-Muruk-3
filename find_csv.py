@@ -5,7 +5,7 @@ import os
 
 def find_csv_sepearte_week(yyyymm):
 
-    print("\n... ### 뉴스 기사 읽어오는 중 ... ###")
+    print("\n... ### 뉴스 기사 읽어오는 중 ### ...")
     #dir = '/content/drive/My Drive/뉴스분석_소스코드/01. 크롤링/김민선/Date'
     #dir = './crawling_data'
     dir = './crawling_data'

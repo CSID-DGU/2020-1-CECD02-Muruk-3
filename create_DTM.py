@@ -16,7 +16,7 @@ def make_DTM_file(gisa_content, yyyy, mm, week):
         csv_list = os.listdir(dir)
         if len(csv_list) >= 4:  # 안의 파일의 크기가 4개보다 더 크면
             if week == 1:
-                print("... ### DTM 파일 읽어오는 중 ... ###")
+                print("... ### DTM 파일 읽어오는 중 ### ...")
             # tmp_pd = pd.DataFrame()
             # tmp_pd = pd.read_csv(dir + '/' + csv_list[week-1], index_col = 0)
             # print(tmp_pd)
